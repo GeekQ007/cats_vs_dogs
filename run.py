@@ -43,7 +43,7 @@ network = LeNet5().to(device)
 loss = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(network.parameters(), lr=0.0001)
 
-for epoch in range (10):
+for epoch in range (20):
     
     total_loss = 0
     total_correct = 0
@@ -69,7 +69,7 @@ for epoch in range (10):
           .format(epoch, total_loss/len(data_image["train"]), total_correct/len(data_image["train"])))
     tb.add_scalar('Loss', total_loss/len(data_image["train"]), epoch)
     tb.add_scalar('Accuracy', total_correct/len(data_image["train"]), epoch) 
-
+torch.save(network, "./lenet5_catvsdog.pth")
 tb.close()
         
         
