@@ -1,0 +1,5 @@
+pytorch
+torchvision
+tensorflow
+tensorboard
+tensorboardX
